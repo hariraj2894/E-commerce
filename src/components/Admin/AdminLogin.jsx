@@ -18,7 +18,7 @@ const AdminLogin = () => {
 
     try {
       // Send POST request to the backend API for login
-      const response = await axios.post('http://localhost:4000/api/superLogin', {
+      const response = await axios.post('https://e-commerce-backend-5137.onrender.com/api/superLogin', {
         username: username,
         password: password,
       });

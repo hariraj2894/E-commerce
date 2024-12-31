@@ -16,7 +16,7 @@ const AdminProducts = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/productAdmin/${artistId}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/productAdmin/${artistId}`);
         setProducts(Array.isArray(response.data) ? response.data : []);
       } catch (error) {
         console.error('Error fetching products:', error);
@@ -38,7 +38,7 @@ const AdminProducts = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:4000/api/product/${id}`);
+      await axios.delete(`https://e-commerce-backend-5137.onrender.com/api/product/${id}`);
       setProducts(products.filter((product) => product._id !== id));
       alert('Product deleted successfully!');
     } catch (error) {

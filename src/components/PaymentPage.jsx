@@ -20,7 +20,7 @@ const PaymentPage = () => {
     }
 
     try {
-      const { data: razorpayOrder } = await axios.post("http://localhost:4000/api/create-order", {
+      const { data: razorpayOrder } = await axios.post("https://e-commerce-backend-5137.onrender.com/api/create-order", {
         amount: totalPrice * 100, // Amount in the smallest currency unit
       });
       const options = {
@@ -31,7 +31,7 @@ const PaymentPage = () => {
         name: "Your Store Name",
         description: "Test Transaction",
         handler: async (response) => {
-          const result = await axios.post("http://localhost:4000/api/confirm-payment", {
+          const result = await axios.post("https://e-commerce-backend-5137.onrender.com/api/confirm-payment", {
             orderId: razorpayOrder.id,
             paymentId: response.razorpay_payment_id,
             signature: response.razorpay_signature,
@@ -63,8 +63,8 @@ const PaymentPage = () => {
   }));
   useEffect(() => {
     if (paid) {
-      axios.post("http://localhost:4000/api/updateearned", { artisianId: artistId, amount: totalPrice });
-      axios.post("http://localhost:4000/api/usercart", { userId, quantity: cart.length, productIds: productData, address })
+      axios.post("https://e-commerce-backend-5137.onrender.com/api/updateearned", { artisianId: artistId, amount: totalPrice });
+      axios.post("https://e-commerce-backend-5137.onrender.com/api/usercart", { userId, quantity: cart.length, productIds: productData, address })
 // console.log('response', response);
     }
   }, [paid]);

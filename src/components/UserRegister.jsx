@@ -20,7 +20,7 @@ const UserRegister = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/userregister', formData);
+      const response = await axios.post('https://e-commerce-backend-5137.onrender.com/api/userregister', formData);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('name', response.data.user.name);
       localStorage.setItem('role', response.data.user.role);

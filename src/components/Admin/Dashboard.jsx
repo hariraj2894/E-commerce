@@ -29,7 +29,7 @@ const Dashboard = () => {
 
   const fetchArtistData = async (term) => {
     try {
-      const response = await axios.get('http://localhost:4000/api/search');
+      const response = await axios.get('https://e-commerce-backend-5137.onrender.com/api/search');
       const artistData = response.data;
       setartist(artistData);
 
@@ -54,7 +54,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchArtist = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/productAdmin/${artistId}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/productAdmin/${artistId}`);
         setadminproducts(response.data);
         setcount(response.data.length); 
       } catch (error) {
@@ -64,7 +64,7 @@ const Dashboard = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/earned/${artistId}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/earned/${artistId}`);
         setearned(response.data);
       } catch (error) {
         setError('Error fetching additional sales data');
@@ -73,7 +73,7 @@ const Dashboard = () => {
 
     const fetchLeaderboard = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/leaderboard');
+        const response = await axios.get('https://e-commerce-backend-5137.onrender.com/api/leaderboard');
         setleader(response.data);
       } catch (error) {
         setError('Error fetching leaderboard data');
@@ -133,7 +133,7 @@ const Dashboard = () => {
             {artistDetails && (
               <div className="bg-white p-6 rounded-md shadow-md mb-6">
                 <h3 className="text-lg font-bold">Seller Details</h3>
-                <img src={artistDetails.img ? `http://localhost:4000/${artistDetails.img}` : ''} alt="Artist" className="w-24 h-24 rounded-full mb-4" />
+                <img src={artistDetails.img ? `https://e-commerce-backend-5137.onrender.com/${artistDetails.img}` : ''} alt="Artist" className="w-24 h-24 rounded-full mb-4" />
                 <p><strong>Name:</strong> {artistDetails.name}</p>
                 <p><strong>Email:</strong> {artistDetails.email}</p>
                 <p><strong>Contact Number:</strong> {artistDetails.contact}</p>

@@ -50,7 +50,7 @@ const AddProduct = () => {
     try {
       const token = localStorage.getItem('token'); // Get the token for authentication
       const response = await axios.post(
-        'http://localhost:4000/api/product',
+        'https://e-commerce-backend-5137.onrender.com/api/product',
         { ...product, artisanId }, // Include artisanId in the request body
         {
           headers: {

@@ -11,7 +11,7 @@ const ProductOne = () => {
     const fetchProduct = async () => {
       try {
         if (!id) return; // If no id is available, don't fetch
-        const response = await axios.get(`http://localhost:4000/api/product/${id}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/product/${id}`);
         setProducts(response.data);
       } catch (error) {
         setError(error.message);

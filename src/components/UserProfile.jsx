@@ -10,7 +10,7 @@ function UserProfile() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/userprofile/${id}`, {
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/userprofile/${id}`, {
           headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${localStorage.getItem('token')}` // Authorization header with JWT

@@ -44,7 +44,7 @@ const ProductsList = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
     try {
-      await axios.post("http://localhost:4000/api/addToCart", {
+      await axios.post("https://e-commerce-backend-5137.onrender.com/api/addToCart", {
         productId: product._id,
         quantity: 1,
         userId: userId,
@@ -70,7 +70,7 @@ const ProductsList = () => {
     localStorage.setItem("cart", JSON.stringify(cart));
 
     try {
-      await axios.post("http://localhost:4000/api/wishlist", {
+      await axios.post("https://e-commerce-backend-5137.onrender.com/api/wishlist", {
         productId: product._id,
         quantity: 1,
         userId: userId,
@@ -87,7 +87,7 @@ const ProductsList = () => {
     const userId = localStorage.getItem("user");
 
     try {
-      await axios.post(`http://localhost:4000/api/productView/${productId}`, {
+      await axios.post(`https://e-commerce-backend-5137.onrender.com/api/productView/${productId}`, {
         userId: userId,
       });
       navigate(`/product/${productId}`);
@@ -98,7 +98,7 @@ const ProductsList = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:4000/api/productList")
+      .get("https://e-commerce-backend-5137.onrender.com/api/productList")
       .then((response) => {
         setProducts(response.data);
         setLoading(false);

@@ -58,16 +58,16 @@ const ProductsList = () => {
 
   const handleWishToCart = async (product) => {
     const userId = localStorage.getItem("user");
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    const existingProduct = cart.find((item) => item._id === product._id);
+    let wish = JSON.parse(localStorage.getItem("wish")) || [];
+    const existingProduct = wish.find((item) => item._id === product._id);
 
     if (existingProduct) {
       existingProduct.quantity += 1;
     } else {
-      cart.push({ ...product, quantity: 1 });
+      wish.push({ ...product, quantity: 1 });
     }
 
-    localStorage.setItem("cart", JSON.stringify(cart));
+    localStorage.setItem("wish", JSON.stringify(wish));
 
     try {
       await axios.post("https://e-commerce-backend-5137.onrender.com/api/wishlist", {

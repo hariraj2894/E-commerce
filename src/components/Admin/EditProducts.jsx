@@ -14,7 +14,7 @@ const EditProducts = () => {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/product/${id}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/product/${id}`);
         setProduct(response.data);
       } catch (error) {
         console.error('Error fetching product:', error);
@@ -34,7 +34,7 @@ const EditProducts = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.put(`http://localhost:4000/api/product/${id}`, product);
+      const response = await axios.put(`https://e-commerce-backend-5137.onrender.com/api/product/${id}`, product);
       console.log(response.data);
       alert('Product updated successfully!');
       window.location.href ='/dashboard/products'

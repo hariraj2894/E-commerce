@@ -20,7 +20,7 @@ const Profile = () => {
   useEffect(() => {
     const fetchUser = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/profile/${artid}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/profile/${artid}`);
         setArtist(response.data);
         setFormData({
           name: response.data.name,
@@ -62,7 +62,7 @@ const Profile = () => {
     if (formData.img) formDataObj.append('img', formData.img);
     
     try {
-      const response = await axios.put(`http://localhost:4000/api/profilEdit/${artid}`, formDataObj, {
+      const response = await axios.put(`https://e-commerce-backend-5137.onrender.com/api/profilEdit/${artid}`, formDataObj, {
         headers: { 'Content-Type': 'multipart/form-data' }, 
       });
       setArtist(response.data.data);
@@ -116,7 +116,7 @@ const Profile = () => {
         </form>
       ) : (
         <div style={styles.profileDetails}>
-          <img src={artist.img ? `http://localhost:4000/${artist.img}` : ''} alt="Profile" style={styles.profileImage} />
+          <img src={artist.img ? `https://e-commerce-backend-5137.onrender.com/${artist.img}` : ''} alt="Profile" style={styles.profileImage} />
           <div style={styles.profileInfo}>
             <h2>{artist.name}</h2>
             <p><strong>Email:</strong> {artist.email}</p>

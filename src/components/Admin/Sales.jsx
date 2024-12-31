@@ -9,7 +9,7 @@ console.log(artistId);
   useEffect(() => {
     const fetchSalesData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/productAdmin/${artistId}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/productAdmin/${artistId}`);
         setSalesData(response.data);
       } catch (error) {
         console.error('Error fetching product data:', error);
@@ -18,7 +18,7 @@ console.log(artistId);
 
     const fetchAdditionalSalesData = async () => {
       try {
-        const response = await axios.get(`http://localhost:4000/api/earned/${artistId}`);
+        const response = await axios.get(`https://e-commerce-backend-5137.onrender.com/api/earned/${artistId}`);
         setAdditionalSalesData(response.data); // Update state with additional sales data
       } catch (error) {
         console.error('Error fetching additional sales data:', error);

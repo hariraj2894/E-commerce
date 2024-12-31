@@ -20,7 +20,7 @@ const ArtisianLogin = () => {
     }
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:4000/api/login', formData);
+      const response = await axios.post('https://e-commerce-backend-5137.onrender.com/api/login', formData);
       localStorage.setItem('token', response.data.token);
       localStorage.setItem('role', response.data.role);
       localStorage.setItem('artid', response.data.artid);
